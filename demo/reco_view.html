@@ -6,13 +6,15 @@
 <body>
   <form>
     <span>id Ausgangsartikel:&nbsp;</span>
+    <input id="btnPrev" type="button" value="<<" onclick="showPrev();" />
     <input id="txtSourceUID" type="text" size=4 value=10 />
+    <input id="btnNext" type="button" value=">>" onclick="showNext();" />
     <input id="btnReload" type="button" value="Seite neu laden" onclick="location.reload();"/>
   </form>
   <table border="1" cellpadding="2" cellspacing="2" width="100%">
     <tbody id="reco_output">
       <tr>
-        <td colspan="4"><img id="img_source_product" height="30%" width="30%"/></td>
+        <td colspan="4"><img id="img_source_product" height="20%" width="20%"/></td>
       </tr>
     </tbody>
   </table>
@@ -69,6 +71,30 @@
     }
   }
 
+  function showPrev()
+  {
+    var txtInputSourceId = document.getElementById("txtSourceUID");
+    if( txtInputSourceId.value > 1 && txtInputSourceId.value < 81 )
+    {
+      intSourceUID = Number(txtInputSourceId.value) - 1;
+      txtInputSourceId.value = intSourceUID;
+    }
+    location.reload();
+  }
+
+
+  function showNext()
+  {
+    var txtInputSourceId = document.getElementById("txtSourceUID");
+    if( txtInputSourceId.value > 0 && txtInputSourceId.value < 80 )
+    {
+      intSourceUID = Number(txtInputSourceId.value) + 1;
+      txtInputSourceId.value = intSourceUID;
+    }
+    location.reload();
+  }
+
+
   function getRecoContent (parrReco)
   {
     var strRecoHtml = "";
@@ -93,7 +119,7 @@
   function show_recos()
   {
     var script = document.createElement("script");
-    var strRecoUrl = "http://192.168.43.53:8080/rde_server/res/19c415c38907/recomm/test_remote/sid/test42?notLearning=true&sku=";
+    var strRecoUrl = "http://192.168.43.35:8080/rde_server/res/19c415c38907/recomm/test_remote/sid/test42?notLearning=true&sku=";
     var intSourceUID = 71;
 
     var txtInputSourceId = document.getElementById("txtSourceUID");
