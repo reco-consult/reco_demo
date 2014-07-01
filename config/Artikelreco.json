@@ -1,0 +1,285 @@
+{
+  "description": "Artikeldetailseite",
+  "encoding": 0,
+  "escapeCharacters": false,
+  "globalparamname": "gp",
+  "htmlTemplate": "",
+  "id": -1,
+  "jscallback": "",
+  "name": "Artikelreco",
+  "output": 1,
+  "path": "Artikelreco",
+  "recoABTestTemplates": [],
+  "recoTemplateProperties": [
+    {
+      "id": 0,
+      "name": "clearRecoPredicateHash",
+      "recoTemplateId": 0,
+      "value": "false"
+    },
+    {
+      "id": 0,
+      "name": "newsletter.base.image.url",
+      "recoTemplateId": 0,
+      "value": "${imageURL}"
+    },
+    {
+      "id": 0,
+      "name": "template.base.link.url",
+      "recoTemplateId": 0,
+      "value": "${URL}"
+    },
+    {
+      "id": 0,
+      "name": "template.base.link.url.fallback",
+      "recoTemplateId": 0,
+      "value": ""
+    },
+    {
+      "id": 0,
+      "name": "template.channel.param",
+      "recoTemplateId": 0,
+      "value": "channel"
+    },
+    {
+      "id": 0,
+      "name": "template.item.image.fallback",
+      "recoTemplateId": 0,
+      "value": ""
+    },
+    {
+      "id": 0,
+      "name": "template.notlearning",
+      "recoTemplateId": 0,
+      "value": "false"
+    },
+    {
+      "id": 0,
+      "name": "template.text.image.fallback",
+      "recoTemplateId": 0,
+      "value": ""
+    },
+    {
+      "id": 0,
+      "name": "template.text.image.subsection",
+      "recoTemplateId": 0,
+      "value": ""
+    }
+  ],
+  "recoquery": [
+    {
+      "active": true,
+      "fallbacktype": 2,
+      "filterparamname": "box1dynamicfilter",
+      "htmlTemplate": "",
+      "id": 0,
+      "itemparamname": "box1passthrough",
+      "learning": true,
+      "maxRecommendations": 5,
+      "name": "generic",
+      "parametername": "sku",
+      "recofilter": [{
+        "id": 0,
+        "recoqueryid": 0,
+        "type": 1,
+        "value": ""
+      }],
+      "recoproperties": [
+        {
+          "id": 0,
+          "name": "fallbackCategoryTopsellerParamName",
+          "recoqueryid": 0,
+          "value": "box1fallbackcategory"
+        },
+        {
+          "id": 0,
+          "name": "filter.merge.product.parametername",
+          "recoqueryid": 0,
+          "value": "box1mergeblacklists"
+        },
+        {
+          "id": 0,
+          "name": "filter.product.parametername",
+          "recoqueryid": 0,
+          "value": "box1dynamicblacklist"
+        },
+        {
+          "id": 0,
+          "name": "maxRecommendationsPerPage",
+          "recoqueryid": 0,
+          "value": ""
+        },
+        {
+          "id": 0,
+          "name": "queryFilterOpParam",
+          "recoqueryid": 0,
+          "value": "box1filteroperator"
+        },
+        {
+          "id": 0,
+          "name": "recommendation.callback.item.column",
+          "recoqueryid": 0,
+          "value": "UID|name|type"
+        },
+        {
+          "id": 0,
+          "name": "recommendation.conversionMode",
+          "recoqueryid": 0,
+          "value": "0"
+        },
+        {
+          "id": 0,
+          "name": "recommendation.searchResult",
+          "recoqueryid": 0,
+          "value": "box1searchresult"
+        },
+        {
+          "id": 0,
+          "name": "recommendation.variantID",
+          "recoqueryid": 0,
+          "value": "box1variation"
+        },
+        {
+          "id": 0,
+          "name": "recommendations.filter.duplicates",
+          "recoqueryid": 0,
+          "value": "true"
+        },
+        {
+          "id": 0,
+          "name": "recommendations.return.category.parametername",
+          "recoqueryid": 0,
+          "value": "box1returncategory"
+        },
+        {
+          "id": 0,
+          "name": "recommendations.topseller.mode",
+          "recoqueryid": 0,
+          "value": "2"
+        },
+        {
+          "id": 0,
+          "name": "recommendations.userrec.type",
+          "recoqueryid": 0,
+          "value": "0"
+        },
+        {
+          "id": 0,
+          "name": "recommendations.usertransaction.mode",
+          "recoqueryid": 0,
+          "value": "3"
+        }
+      ],
+      "recotype": 0,
+      "ruletype": -1,
+      "sequence": 1,
+      "templateid": 0
+    },
+    {
+      "active": true,
+      "fallbacktype": 2,
+      "filterparamname": "box1_1dynamicfilter",
+      "htmlTemplate": "",
+      "id": 0,
+      "itemparamname": "box1_1passthrough",
+      "learning": true,
+      "maxRecommendations": 5,
+      "name": "zusammenkauf",
+      "parametername": "sku",
+      "recofilter": [{
+        "id": 0,
+        "recoqueryid": 0,
+        "type": 1,
+        "value": ""
+      }],
+      "recoproperties": [
+        {
+          "id": 0,
+          "name": "fallbackCategoryTopsellerParamName",
+          "recoqueryid": 0,
+          "value": "box1_1fallbackcategory"
+        },
+        {
+          "id": 0,
+          "name": "filter.merge.product.parametername",
+          "recoqueryid": 0,
+          "value": "box1_1mergeblacklists"
+        },
+        {
+          "id": 0,
+          "name": "filter.product.parametername",
+          "recoqueryid": 0,
+          "value": "box1_1dynamicblacklist"
+        },
+        {
+          "id": 0,
+          "name": "maxRecommendationsPerPage",
+          "recoqueryid": 0,
+          "value": ""
+        },
+        {
+          "id": 0,
+          "name": "queryFilterOpParam",
+          "recoqueryid": 0,
+          "value": "box1_1filteroperator"
+        },
+        {
+          "id": 0,
+          "name": "recommendation.callback.item.column",
+          "recoqueryid": 0,
+          "value": "UID|name|type"
+        },
+        {
+          "id": 0,
+          "name": "recommendation.searchResult",
+          "recoqueryid": 0,
+          "value": "box1_1searchresult"
+        },
+        {
+          "id": 0,
+          "name": "recommendation.variantID",
+          "recoqueryid": 0,
+          "value": "box1_1variation"
+        },
+        {
+          "id": 0,
+          "name": "recommendations.filter.duplicates",
+          "recoqueryid": 0,
+          "value": "true"
+        },
+        {
+          "id": 0,
+          "name": "recommendations.return.category.parametername",
+          "recoqueryid": 0,
+          "value": "box1_1returncategory"
+        },
+        {
+          "id": 0,
+          "name": "recommendations.topseller.mode",
+          "recoqueryid": 0,
+          "value": "2"
+        },
+        {
+          "id": 0,
+          "name": "recommendations.userrec.type",
+          "recoqueryid": 0,
+          "value": "0"
+        },
+        {
+          "id": 0,
+          "name": "recommendations.usertransaction.mode",
+          "recoqueryid": 0,
+          "value": "3"
+        }
+      ],
+      "recotype": 17,
+      "ruletype": -1,
+      "sequence": 2,
+      "templateid": 0
+    }
+  ],
+  "redataid": 0,
+  "reid": "",
+  "text": "Template : Artikelreco",
+  "type": 0
+}

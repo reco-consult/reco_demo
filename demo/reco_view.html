@@ -1,0 +1,116 @@
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Demo Empfehlungen f&uuml;r Artikeldetailseite</title>
+</head>
+<body>
+  <form>
+    <span>id Ausgangsartikel:&nbsp;</span>
+    <input id="txtSourceUID" type="text" size=4 value=10 />
+    <input id="btnReload" type="button" value="Seite neu laden" onclick="location.reload();"/>
+  </form>
+  <table border="1" cellpadding="2" cellspacing="2" width="100%">
+    <tbody id="reco_output">
+      <tr>
+        <td colspan="4"><img id="img_source_product" height="30%" width="30%"/></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+<script type="text/javascript">
+
+  function get_reco( pData )
+  {
+    addRecos( pData );
+  }
+
+  function addRecos( pData )
+  {
+    var objReco = null;
+    var strRecoRow = "";
+    var objRecoTableBody = document.getElementById("reco_output");
+    var strContent = "";
+
+    for( var intRecoIndex = 0; intRecoIndex < pData.length; intRecoIndex++)
+    {
+      objReco = pData[intRecoIndex];
+
+      var strRecoType = null;
+
+      for( strRecoType in objReco )
+      {
+        //exclude global box
+        if( strRecoType != "global" )
+        {
+          //create a table row for status information
+          var objRecoRow = document.createElement("tr");
+
+          //fill row with reco box name and number of recos for this box
+          var objRecoRowContent = document.createElement("td");
+          //info row is 5 cols wide
+          objRecoRowContent.setAttribute("colspan",4);
+          strContent = 'Die <b>' + strRecoType + '</b> Empfehlungsbox bietet ' + objReco[strRecoType].length + ' Empfehlungen.';
+          objRecoRowContent.innerHTML = strContent;
+          //add content to table row
+          objRecoRow.appendChild(objRecoRowContent);
+          //add table row to document
+          objRecoTableBody.appendChild(objRecoRow);
+
+          //create a table row for recommendations
+          objRecoRow = document.createElement("tr");
+          objRecoRow.innerHTML = getRecoContent(objReco[strRecoType]);
+          //add table row to document
+          objRecoTableBody.appendChild(objRecoRow);
+
+
+        }
+      }
+    }
+  }
+
+  function getRecoContent (parrReco)
+  {
+    var strRecoHtml = "";
+    var strUID = "";
+    var objReco = null;
+
+    for( var intReco = 0; intReco < parrReco.length; intReco++ )
+    {
+      objReco = parrReco[intReco];
+      strRecoHtml += '<td><img src="img/' + objReco.UID + '.png"/></td>';
+    }
+    //fill up with empty cells if we have not enough recommendations
+    for( var intFill = intReco; intFill < 4; intFill++ )
+    {
+      strRecoHtml += '<td>leer</td>';
+    }
+
+    return strRecoHtml;
+  }
+
+
+  function show_recos()
+  {
+    var script = document.createElement("script");
+    var strRecoUrl = "http://192.168.43.53:8080/rde_server/res/19c415c38907/recomm/test_remote/sid/test42?notLearning=true&sku=";
+    var intSourceUID = 71;
+
+    var txtInputSourceId = document.getElementById("txtSourceUID");
+    if( txtInputSourceId.value > 0 && txtInputSourceId.value < 81 )
+    {
+      intSourceUID = txtInputSourceId.value;
+    }
+
+    var imgSourceProduct = document.getElementById("img_source_product");
+    imgSourceProduct.setAttribute("src","img/" + intSourceUID + ".png");
+
+    script.type = "text/javascript";
+    script.src = strRecoUrl + intSourceUID;
+    document.body.appendChild(script);
+  }
+
+  window.onload = show_recos();
+
+</script>
+</html>
